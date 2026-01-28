@@ -1,0 +1,6 @@
+{
+    "description": "Content pack built on CPMA for alerting on entities",
+    "id": "DA-ITSI-CP-CUST-entity_alerting",
+    "title": "Entity Alerting",
+    "version": "2.0.2"
+}

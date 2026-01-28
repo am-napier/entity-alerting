@@ -1,0 +1,33 @@
+{
+    "description": "",
+    "earliest_time": "-12h",
+    "is_default": false,
+    "is_kpi_filter_enabled": false,
+    "is_service_filter_enabled": true,
+    "is_tag_filter_enabled": false,
+    "key": "4479befa-1522-11f0-9a6d-1d1b8bdcca9e",
+    "kpi_filter_string": "",
+    "kpi_tiles_settings": {
+        "is_filter_enabled": false,
+        "num_tiles": 50
+    },
+    "kpi_whitelist": [],
+    "latest_time": "now",
+    "search_type": "aggregate",
+    "selected_kpi_id": "",
+    "selected_service_id": "b6345b4e-f122-470f-bb07-f033c73f227d",
+    "service_filter_string": "\"Alerting Tests\"",
+    "service_tiles_settings": {
+        "is_filter_enabled": true,
+        "num_tiles": 50
+    },
+    "service_white_list": "b6345b4e-f122-470f-bb07-f033c73f227d",
+    "show_service_dependencies": false,
+    "tag_filter_string": "",
+    "tag_whitelist": "",
+    "tile_size": "large",
+    "title": "Alerting Tests",
+    "version": "0.0.41",
+    "view": "standard",
+    "view_type": "service_topology"
+}

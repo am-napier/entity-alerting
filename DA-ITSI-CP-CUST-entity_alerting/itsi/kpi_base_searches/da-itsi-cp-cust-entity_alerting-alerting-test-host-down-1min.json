@@ -1,0 +1,31 @@
+{
+    "alert_lag": 0,
+    "alert_period": "1",
+    "base_search": "| inputlookup alert_test.csv | eval host=host.\"-1 min\"",
+    "description": "",
+    "entity_filter_field": "host",
+    "entity_split_field": "host",
+    "is_filter_entities_to_service": false,
+    "is_split_by_entity": true,
+    "key": "366b5f3c-de28-48a1-be10-cc84d8096f8f",
+    "metric_qualifier": "",
+    "metrics": [
+        {
+            "aggregate_statop": "max",
+            "entity_statop": "latest",
+            "fill_gaps": "null_value",
+            "gap_custom_alert_value": "0",
+            "gap_severity": "unknown",
+            "gap_severity_color": "#CCCCCC",
+            "gap_severity_color_light": "#EEEEEE",
+            "gap_severity_value": "-1",
+            "key": "6dbc242a-5bd4-488e-926f-adb8690f8a43",
+            "threshold_field": "state",
+            "title": "max(state)",
+            "unit": ""
+        }
+    ],
+    "search_alert_earliest": "1",
+    "title": "Alerting Test host down 1min",
+    "version": "0.0.41"
+}

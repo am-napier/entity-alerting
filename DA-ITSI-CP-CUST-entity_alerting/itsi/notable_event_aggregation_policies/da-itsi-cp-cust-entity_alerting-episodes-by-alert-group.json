@@ -1,0 +1,451 @@
+{
+    "breaking_criteria": {
+        "condition": "OR",
+        "items": [
+            {
+                "config": {
+                    "limit": 28800
+                },
+                "type": "pause"
+            }
+        ]
+    },
+    "description": "v4 - This policy will group together any notable events sharing the same alert_group field",
+    "disabled": false,
+    "entity_factor_enabled": true,
+    "filter_criteria": {
+        "condition": "OR",
+        "items": [
+            {
+                "config": {
+                    "condition": "AND",
+                    "items": [
+                        {
+                            "config": {
+                                "field": "alert_group",
+                                "operator": "=",
+                                "value": "*"
+                            },
+                            "type": "notable_event_field"
+                        },
+                        {
+                            "config": {
+                                "field": "source",
+                                "operator": "!=",
+                                "value": "*Episode Monitoring*"
+                            },
+                            "type": "notable_event_field"
+                        }
+                    ]
+                },
+                "type": "clause"
+            },
+            {
+                "config": {
+                    "condition": "AND",
+                    "items": [
+                        {
+                            "config": {
+                                "field": "alert_group",
+                                "operator": "=",
+                                "value": "*"
+                            },
+                            "type": "notable_event_field"
+                        },
+                        {
+                            "config": {
+                                "field": "itsi_policy_id",
+                                "operator": "=",
+                                "value": "da-itsi-cp-monitoring-alerting-episodes-by-alert-group"
+                            },
+                            "type": "notable_event_field"
+                        }
+                    ]
+                },
+                "type": "clause"
+            }
+        ]
+    },
+    "group_assignee": "%owner%",
+    "group_custom_instruction": "",
+    "group_dashboard": "",
+    "group_dashboard_context": "first",
+    "group_description": "%description%",
+    "group_instruction": "%all_instruction%",
+    "group_severity": "%highest_severity%",
+    "group_status": "%status%",
+    "group_title": "Alert Group: %alert_group%",
+    "key": "da-itsi-cp-monitoring-alerting-episodes-by-alert-group",
+    "priority": "",
+    "rules": [
+        {
+            "actions": [
+                {
+                    "condition": "AND",
+                    "items": [
+                        {
+                            "config": {
+                                "field": "status",
+                                "value": "5"
+                            },
+                            "execution_criteria": {
+                                "execute_on": "GROUP"
+                            },
+                            "type": "notable_event_change"
+                        },
+                        {
+                            "config": {
+                                "value": "Closing due to no activity in 8 hours"
+                            },
+                            "execution_criteria": {
+                                "execute_on": "GROUP"
+                            },
+                            "type": "notable_event_comment"
+                        }
+                    ]
+                }
+            ],
+            "activation_criteria": {
+                "condition": "AND",
+                "items": [
+                    {
+                        "type": "breaking_criteria"
+                    }
+                ]
+            },
+            "description": "",
+            "key": "db5a6f1b093b825587be86f3",
+            "priority": 5.0,
+            "title": ""
+        },
+        {
+            "actions": [
+                {
+                    "condition": "AND",
+                    "items": [
+                        {
+                            "config": {
+                                "field": "status",
+                                "value": "5"
+                            },
+                            "execution_criteria": {
+                                "execute_on": "GROUP"
+                            },
+                            "type": "notable_event_change"
+                        },
+                        {
+                            "config": {
+                                "value": "Ignoring singleton clearing alert"
+                            },
+                            "execution_criteria": {
+                                "execute_on": "GROUP"
+                            },
+                            "type": "notable_event_comment"
+                        }
+                    ]
+                }
+            ],
+            "activation_criteria": {
+                "condition": "AND",
+                "items": [
+                    {
+                        "config": {
+                            "condition": "AND",
+                            "items": [
+                                {
+                                    "config": {
+                                        "field": "severity",
+                                        "operator": "=",
+                                        "value": "2"
+                                    },
+                                    "type": "notable_event_field"
+                                }
+                            ]
+                        },
+                        "type": "clause"
+                    },
+                    {
+                        "config": {
+                            "limit": "1",
+                            "operator": "=="
+                        },
+                        "type": "notable_event_count"
+                    }
+                ]
+            },
+            "description": "",
+            "key": "33a364516c4c809dfc105a52",
+            "priority": 5.0,
+            "title": ""
+        },
+        {
+            "actions": [
+                {
+                    "condition": "AND",
+                    "items": [
+                        {
+                            "config": {
+                                "field": "status",
+                                "value": "5"
+                            },
+                            "execution_criteria": {
+                                "execute_on": "GROUP"
+                            },
+                            "type": "notable_event_change"
+                        },
+                        {
+                            "config": {
+                                "value": "Closing episode because all alarms have cleared"
+                            },
+                            "execution_criteria": {
+                                "execute_on": "GROUP"
+                            },
+                            "type": "notable_event_comment"
+                        }
+                    ]
+                }
+            ],
+            "activation_criteria": {
+                "condition": "AND",
+                "items": [
+                    {
+                        "config": {
+                            "condition": "AND",
+                            "items": [
+                                {
+                                    "config": {
+                                        "field": "source",
+                                        "operator": "=",
+                                        "value": "*Episode Monitoring - Set Episode to Highest Alarm Severity*"
+                                    },
+                                    "type": "notable_event_field"
+                                },
+                                {
+                                    "config": {
+                                        "field": "set_episode_status",
+                                        "operator": "=",
+                                        "value": "5"
+                                    },
+                                    "type": "notable_event_field"
+                                }
+                            ]
+                        },
+                        "type": "clause"
+                    }
+                ]
+            },
+            "description": "",
+            "key": "259a0fef77640a7a724d8110",
+            "priority": 5.0,
+            "title": ""
+        },
+        {
+            "actions": [
+                {
+                    "condition": "AND",
+                    "items": [
+                        {
+                            "config": {
+                                "value": "Setting episode severity to match highest alarm severity"
+                            },
+                            "execution_criteria": {
+                                "execute_on": "GROUP"
+                            },
+                            "type": "notable_event_comment"
+                        }
+                    ]
+                }
+            ],
+            "activation_criteria": {
+                "condition": "AND",
+                "items": [
+                    {
+                        "config": {
+                            "condition": "AND",
+                            "items": [
+                                {
+                                    "config": {
+                                        "field": "source",
+                                        "operator": "=",
+                                        "value": "*Episode Monitoring - Set Episode to Highest Alarm Severity*"
+                                    },
+                                    "type": "notable_event_field"
+                                },
+                                {
+                                    "config": {
+                                        "field": "set_episode_severity",
+                                        "operator": "=",
+                                        "value": "*"
+                                    },
+                                    "type": "notable_event_field"
+                                }
+                            ]
+                        },
+                        "type": "clause"
+                    }
+                ]
+            },
+            "description": "",
+            "key": "e95bc9c163638f8813e41747",
+            "priority": 5.0,
+            "title": ""
+        },
+        {
+            "actions": [
+                {
+                    "condition": "AND",
+                    "items": [
+                        {
+                            "config": {
+                                "value": "Email triggered"
+                            },
+                            "execution_criteria": {
+                                "execute_on": "GROUP"
+                            },
+                            "type": "notable_event_comment"
+                        }
+                    ]
+                }
+            ],
+            "activation_criteria": {
+                "condition": "AND",
+                "items": [
+                    {
+                        "config": {
+                            "condition": "AND",
+                            "items": [
+                                {
+                                    "config": {
+                                        "field": "send_alert",
+                                        "operator": "=",
+                                        "value": "true"
+                                    },
+                                    "type": "notable_event_field"
+                                },
+                                {
+                                    "config": {
+                                        "field": "alert_level",
+                                        "operator": ">",
+                                        "value": "2"
+                                    },
+                                    "type": "notable_event_field"
+                                },
+                                {
+                                    "config": {
+                                        "field": "episode_contact_method",
+                                        "operator": "=",
+                                        "value": "email"
+                                    },
+                                    "type": "notable_event_field"
+                                }
+                            ]
+                        },
+                        "type": "clause"
+                    }
+                ]
+            },
+            "description": "",
+            "key": "38499b31c24849e12ccdfc62",
+            "priority": 5.0,
+            "title": ""
+        },
+        {
+            "actions": [
+                {
+                    "condition": "AND",
+                    "items": [
+                        {
+                            "config": {
+                                "value": "xmatter Alert"
+                            },
+                            "execution_criteria": {
+                                "execute_on": "GROUP"
+                            },
+                            "type": "notable_event_comment"
+                        }
+                    ]
+                }
+            ],
+            "activation_criteria": {
+                "condition": "AND",
+                "items": [
+                    {
+                        "config": {
+                            "condition": "AND",
+                            "items": [
+                                {
+                                    "config": {
+                                        "field": "send_alert",
+                                        "operator": "=",
+                                        "value": "true"
+                                    },
+                                    "type": "notable_event_field"
+                                },
+                                {
+                                    "config": {
+                                        "field": "alert_level",
+                                        "operator": ">",
+                                        "value": "4"
+                                    },
+                                    "type": "notable_event_field"
+                                },
+                                {
+                                    "config": {
+                                        "field": "xmatters_detail",
+                                        "operator": "=",
+                                        "value": "*"
+                                    },
+                                    "type": "notable_event_field"
+                                }
+                            ]
+                        },
+                        "type": "clause"
+                    }
+                ]
+            },
+            "description": "",
+            "key": "3797c0888d7d4ca9a44de8dc",
+            "priority": 5.0,
+            "title": ""
+        }
+    ],
+    "service_topology_enabled": true,
+    "smart_breaking_criteria": {
+        "condition": "OR",
+        "items": [
+            {
+                "config": {
+                    "limit": "7200"
+                },
+                "type": "pause"
+            }
+        ]
+    },
+    "smart_enabled": false,
+    "smart_factor_fields": [],
+    "smart_factor_weights": [
+        {
+            "factor_name": "text",
+            "factor_weight": 0.5
+        },
+        {
+            "factor_name": "attribute",
+            "factor_weight": 0.5
+        }
+    ],
+    "smart_field_analysis_end_time": 0.0,
+    "smart_field_analysis_start_time": 0.0,
+    "smart_group_assignee": "%owner%",
+    "smart_group_dashboard": "",
+    "smart_group_dashboard_context": "first",
+    "smart_group_description": "%description%",
+    "smart_group_instruction": "%itsi_instruction%",
+    "smart_group_severity": "%severity%",
+    "smart_group_status": "%status%",
+    "smart_group_title": "%title%",
+    "smart_split_by_field": "",
+    "split_by_field": "alert_group",
+    "sub_group_limit": "",
+    "title": "Episodes by Alert Group",
+    "version": "0.0.41"
+}

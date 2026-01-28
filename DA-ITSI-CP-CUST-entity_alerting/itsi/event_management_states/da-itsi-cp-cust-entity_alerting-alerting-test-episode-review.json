@@ -1,0 +1,58 @@
+{
+    "arbitrary_search": "Alert Group: Alerting Test*1min",
+    "auto_refresh": 0.0,
+    "columns_shown": [
+        {
+            "value": "_duplicate_count"
+        },
+        {
+            "value": "title"
+        },
+        {
+            "dedupValue": [
+                "_first_time",
+                "_last_time"
+            ],
+            "value": "_time"
+        },
+        {
+            "value": "owner"
+        },
+        {
+            "value": "severity_label"
+        },
+        {
+            "value": "status"
+        },
+        {
+            "value": "description"
+        }
+    ],
+    "configured_tab_id": "impact",
+    "dashboard": "{\"dataSources\":{\"mttrSearch\":{\"options\":{\"query\":\"| `itsi_event_management_get_mean_time(resolved)`\",\"queryParameters\":{\"earliest\":\"$earliest_time$\",\"latest\":\"$latest_time$\"}},\"type\":\"ds.search\"},\"episodesBySeveritySearch\":{\"options\":{\"query\":\"|`itsi_event_management_episode_by_severity`\",\"queryParameters\":{\"earliest\":\"$earliest_time$\",\"latest\":\"$latest_time$\"}},\"type\":\"ds.search\"},\"noiseReductionSearch\":{\"options\":{\"query\":\"| `itsi_event_management_noise_reduction`\",\"queryParameters\":{\"earliest\":\"$earliest_time$\",\"latest\":\"$latest_time$\"}},\"type\":\"ds.search\"},\"percentAckSearch\":{\"options\":{\"query\":\"| `itsi_event_management_get_episode_count(acknowledged)` | eval acknowledgedPercent=(Acknowledged/total)*100 | table acknowledgedPercent\",\"queryParameters\":{\"earliest\":\"$earliest_time$\",\"latest\":\"$latest_time$\"}},\"type\":\"ds.search\"},\"mttaSearch\":{\"options\":{\"query\":\"| `itsi_event_management_get_mean_time(acknowledged)`\",\"queryParameters\":{\"earliest\":\"$earliest_time$\",\"latest\":\"$latest_time$\"}},\"type\":\"ds.search\"}},\"visualizations\":{\"mttr\":{\"title\":\"Mean Time to Resolve\",\"type\":\"splunk.singlevalue\",\"options\":{\"backgroundColor\":\"#ffffff\",\"sparklineDisplay\":\"off\",\"trendDisplay\":\"off\",\"trendValue\":0,\"unit\":\"minutes\"},\"dataSources\":{\"primary\":\"mttrSearch\"}},\"episodesBySeverity\":{\"title\":\"Episodes by Severity\",\"type\":\"splunk.bar\",\"options\":{\"backgroundColor\":\"#ffffff\",\"barSpacing\":5,\"dataValuesDisplay\":\"all\",\"legendDisplay\":\"off\",\"showYMajorGridLines\":false,\"yAxisLabelVisibility\":\"hide\",\"xAxisMajorTickVisibility\":\"hide\",\"yAxisMajorTickVisibility\":\"hide\",\"xAxisTitleVisibility\":\"hide\",\"yAxisTitleVisibility\":\"hide\"},\"dataSources\":{\"primary\":\"episodesBySeveritySearch\"}},\"noiseReduction\":{\"title\":\"Total Noise Reduction\",\"type\":\"splunk.singlevalue\",\"options\":{\"backgroundColor\":\"> majorValue | rangeValue(backgroundColorThresholds)\",\"numberPrecision\":2,\"sparklineDisplay\":\"off\",\"trendDisplay\":\"off\",\"trendValue\":0,\"unit\":\"%\"},\"context\":{\"backgroundColorThresholds\":[{\"from\":95,\"value\":\"#65a637\"},{\"from\":90,\"to\":95,\"value\":\"#6db7c6\"},{\"from\":87,\"to\":90,\"value\":\"#f7bc38\"},{\"from\":85,\"to\":87,\"value\":\"#f58f39\"},{\"to\":85,\"value\":\"#d93f3c\"}]},\"dataSources\":{\"primary\":\"noiseReductionSearch\"}},\"percentAck\":{\"title\":\"Episodes Acknowledged\",\"type\":\"splunk.singlevalue\",\"options\":{\"backgroundColor\":\"#ffffff\",\"numberPrecision\":2,\"sparklineDisplay\":\"off\",\"trendDisplay\":\"off\",\"trendValue\":0,\"unit\":\"%\"},\"dataSources\":{\"primary\":\"percentAckSearch\"}},\"mtta\":{\"title\":\"Mean Time to Acknowledged\",\"type\":\"splunk.singlevalue\",\"options\":{\"backgroundColor\":\"#ffffff\",\"sparklineDisplay\":\"off\",\"trendDisplay\":\"off\",\"trendValue\":0,\"unit\":\"minutes\"},\"dataSources\":{\"primary\":\"mttaSearch\"}}},\"layout\":{\"type\":\"grid\",\"options\":{\"display\":\"auto-scale\",\"height\":240,\"width\":1440},\"structure\":[{\"item\":\"mttr\",\"type\":\"block\",\"position\":{\"x\":0,\"y\":0,\"w\":288,\"h\":220}},{\"item\":\"episodesBySeverity\",\"type\":\"block\",\"position\":{\"x\":288,\"y\":0,\"w\":288,\"h\":220}},{\"item\":\"noiseReduction\",\"type\":\"block\",\"position\":{\"x\":576,\"y\":0,\"w\":288,\"h\":220}},{\"item\":\"percentAck\",\"type\":\"block\",\"position\":{\"x\":864,\"y\":0,\"w\":288,\"h\":220}},{\"item\":\"mtta\",\"type\":\"block\",\"position\":{\"x\":1152,\"y\":0,\"w\":288,\"h\":220}}]}}",
+    "description": "",
+    "earliest": "-2h",
+    "event_deduplication": true,
+    "event_deduplication_field": "event_identifier_hash",
+    "event_field_filter": {},
+    "fetch_limit": 50.0,
+    "filter_collection": [
+        {
+            "id": "status",
+            "label": "Status",
+            "text": "\"In progress\",New,Pending,Resolved,Unknown",
+            "value": "2,1,3,4,0"
+        }
+    ],
+    "identifying_name": "alerting test - episode review",
+    "interactable": true,
+    "key": "6fd8ae5a-fa74-11ef-89f7-06a77da26810",
+    "latest": "now",
+    "show_summary_dashboard": false,
+    "sort_direction": "-",
+    "sort_field": "_time",
+    "title": "Alerting Test - Episode Review",
+    "version": "0.0.41",
+    "view_mode": "standard",
+    "viewing_option": "standard"
+}

@@ -1,0 +1,31 @@
+{
+    "alert_lag": 0,
+    "alert_period": "15",
+    "base_search": "| inputlookup alert_test.csv\n| eval host=host.\"-15-min\"",
+    "description": "15 minute poll cycle",
+    "entity_filter_field": "host",
+    "entity_split_field": "host",
+    "is_filter_entities_to_service": false,
+    "is_split_by_entity": true,
+    "key": "67f50d1fb35969559a0a54ce",
+    "metric_qualifier": "",
+    "metrics": [
+        {
+            "aggregate_statop": "max",
+            "entity_statop": "latest",
+            "fill_gaps": "null_value",
+            "gap_custom_alert_value": "0",
+            "gap_severity": "unknown",
+            "gap_severity_color": "#CCCCCC",
+            "gap_severity_color_light": "#EEEEEE",
+            "gap_severity_value": "-1",
+            "key": "6dbc242a-5bd4-488e-926f-adb8690f8a43",
+            "threshold_field": "state",
+            "title": "max(state)",
+            "unit": ""
+        }
+    ],
+    "search_alert_earliest": "1",
+    "title": "Alerting Test host down 15 min",
+    "version": "0.0.41"
+}

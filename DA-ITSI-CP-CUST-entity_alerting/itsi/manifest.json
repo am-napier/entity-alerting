@@ -1,0 +1,61 @@
+{
+    "correlation_searches": [
+        "da-itsi-cp-cust-entity_alerting-episode-monitoring-set-episode-to-highest-alarm-severity.json",
+        "da-itsi-cp-cust-entity_alerting-episode-monitoring-trigger-major-minor-alerts.json",
+        "da-itsi-cp-cust-entity_alerting-service-monitoring-entity-degraded-sustained-1-min.json",
+        "da-itsi-cp-cust-entity_alerting-service-monitoring-entity-degraded-sustained-15-min.json",
+        "da-itsi-cp-cust-entity_alerting-service-monitoring-entity-degraded-sustained-5-min.json",
+        "da-itsi-cp-cust-entity_alerting-service-monitoring-event-type-rtn.json"
+    ],
+    "event_management_states": [
+        "da-itsi-cp-cust-entity_alerting-alerting-test-episode-review.json"
+    ],
+    "kpi_base_searches": [
+        "da-itsi-cp-cust-entity_alerting-alerting-test-host-down-15-min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-test-host-down-1min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-test-host-down-5min.json"
+    ],
+    "main_screenshot": {
+        "path": "main_screenshot.png",
+        "thumb": "main_screenshot.png"
+    },
+    "notable_event_aggregation_policies": [
+        "da-itsi-cp-cust-entity_alerting-episodes-by-alert-group.json"
+    ],
+    "screenshots": [],
+    "service_analyzers": [
+        "da-itsi-cp-cust-entity_alerting-alerting-tests.json"
+    ],
+    "service_templates": [
+        "da-itsi-cp-cust-entity_alerting-alert-test-15min.json",
+        "da-itsi-cp-cust-entity_alerting-alert-test-1min.json",
+        "da-itsi-cp-cust-entity_alerting-alert-test-5min.json"
+    ],
+    "services": [
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-0-0-15min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-0-0-1min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-0-0-5min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-0-1-15min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-0-1-1min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-0-1-5min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-1-0-15min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-1-0-1min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-1-0-5min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-1-1-15min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-1-1-1min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-1-1-5min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-1-min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-15-min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-2-2-15min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-2-2-1min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-2-2-5min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-2-5-15min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-2-5-1min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-2-5-5min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-5-2-15min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-5-2-1min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-5-2-5min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests-5-min.json",
+        "da-itsi-cp-cust-entity_alerting-alerting-tests.json"
+    ]
+}
