@@ -1,5 +1,5 @@
 # entity-alerting
-This contet pack works over the top of the ISTI CP for monitoring an alerting.
+This contet pack works over the top of the ITSI CP for monitoring an alerting.
 
 It enables the following
 * create episodes from entity and KPI state changes
